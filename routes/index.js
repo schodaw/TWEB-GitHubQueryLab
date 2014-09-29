@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 
 //test the github query functionality
 router.get('/search', function(req, res) {
-    gitHubRepositoryResearch(req.query, function(result) {
+    gitHubRepositoryResearch(req.param("query"), function(result) {
 	   res.send(result);
     });
 });
