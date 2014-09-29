@@ -8,7 +8,14 @@ router.get('/', function(req, res) {
     res.sendfile("views/lab03.html");
 });
 
+//test the github query functionality
+router.get('/search', function(req, res) {
+    gitHubRepositoryResearch(req.query, function(result) {
+	   res.send(result);
+    });
+});
 
+//TODO : mettre fonction dans un autre fichier ?
 //github query
 var GitHubApi = require("github");
 
@@ -23,15 +30,11 @@ var github = new GitHubApi({
     timeout: 5000
 });
 
-
-//TODO : mettre fonction dans un autre fichier ?
-function gitHubRepositoryResearch(researchQuery){
-    var transformedJSONData = {};
+function gitHubRepositoryResearch(researchQuery, resultGetterFunction){
     
     github.search.repos(
         {q: researchQuery},
         function(err, res) {
-
             //extracting the request result given as json
             var repositories = [];
             res.items.forEach(function(repo) {
@@ -54,19 +57,14 @@ function gitHubRepositoryResearch(researchQuery){
                                   });
             });
 
+			transformedJSONData = {};
             transformedJSONData.count = res.total_count;
             transformedJSONData.repositories = repositories;
+			
+            //sending the result to a callback function
+			resultGetterFunction(transformedJSONData);
         }
     );
-    
-    return transformedJSONData
 }
-
-//test the github query functionality
-router.get('/search', function(req, res) {
-    //res.send(req.query);
-    res.send(gitHubRepositoryResearch("tetris"));
-    console.log(gitHubRepositoryResearch("tetris"));
-});
 
 module.exports = router;
