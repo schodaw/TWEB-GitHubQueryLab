@@ -8,4 +8,10 @@ router.get('/', function(req, res) {
     res.sendfile("views/lab03.html");
 });
 
+
+//test the github query functionality
+router.get('/search', function(req, res) {
+    res.send(gitHubRepositoryResearch(req.query));
+});
+
 module.exports = router;

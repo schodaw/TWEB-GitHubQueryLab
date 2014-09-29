@@ -57,7 +57,4 @@ app.use(function(err, req, res, next) {
     });
 });
 
-var searchedGitRepos = gitHubRepositoryResearch("TWEB-GitHubQueryLab");
-alert(searchedGitRepos);
-
 module.exports = app;
