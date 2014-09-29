@@ -65,7 +65,7 @@ function gitHubRepositoryResearch(researchQuery){
 //test the github query functionality
 router.get('/search', function(req, res) {
     //res.send(req.query);
-    res.send(gitHubRepositoryResearch(req.query));
+    res.send(gitHubRepositoryResearch("tetris"));
 });
 
 module.exports = router;
