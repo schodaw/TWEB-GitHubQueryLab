@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
 
 //test the github query functionality
 router.get('/search', function(req, res) {
-    res.send(gitHubRepositoryResearch(req.query));
+    res.send("hello");//res.send(gitHubRepositoryResearch(req.query));
 });
 
 module.exports = router;
