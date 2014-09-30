@@ -12,7 +12,7 @@ $(document).ready(function(){
     $("#searchButton").click(function(){
         $.getJSON("/search", "query=" + $("#searchQuery").val(), function( data ) {
             alert('done');
-            $("#div1").html(data);
+            $("#div1").text(JSON.stringify(data));
         });
         
         /*
