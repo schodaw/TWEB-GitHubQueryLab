@@ -5,8 +5,8 @@
  Auteur(s)   : Jollien Dominique et Ngo Dung
  Date        : 30.09.2014
 
- But         : Script jquery qui utilise la librairie HandleBars pour remplir
-                le fichier labo3.html avec les valeurs d'affichage.
+ But         : JQuery script using the HandleBars library to fill the file
+                labo3.html with display values.
  -------------------------------------------------------------------------------
  */
 $(document).ready(function(){ 
