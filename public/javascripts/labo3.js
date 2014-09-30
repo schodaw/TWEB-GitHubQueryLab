@@ -10,9 +10,13 @@
  */
 $(function(){
     $("#searchButton").click(function(){
+        //prevent default handling of the event
+        //we do that so that the page is not refreshed which would erase the content of the result <p> we just put with AJAX
         event.preventDefault();
+        
+        //perform a resarch of Git repositories by doing an AJAX query on /search
+        //this method doesn't work on cross-domain url
         $.getJSON("/search", "query=" + $("#searchQuery").val(), function( data ) {
-            alert('done');
             $("#result").text(JSON.stringify(data));
         });
     });

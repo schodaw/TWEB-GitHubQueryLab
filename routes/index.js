@@ -30,8 +30,14 @@ var github = new GitHubApi({
     timeout: 5000
 });
 
+/**
+* Preform a search query for Git repositories by using the GitHub API via the github node.js module
+* researchQuery : queyword for repository search
+* resultGetterFunction : callback function to process the JSON data returned by the function
+**/
 function gitHubRepositoryResearch(researchQuery, resultGetterFunction){
     
+    //send the query to github
     github.search.repos(
         {q: researchQuery},
         function(err, res) {
