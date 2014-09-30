@@ -10,7 +10,7 @@
  */
 $(document).ready(function(){
     $("#searchButton").click(function(){
-        $.getJSON("/search", "query" + $("#searchQuery").val(), function( data ) {
+        $.getJSON("/search", "query=" + $("#searchQuery").val(), function( data ) {
             alert('done');
             $("#div1").html(data);
         });
