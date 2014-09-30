@@ -10,7 +10,7 @@
  */
 $(function(){
     $("#searchButton").click(function(){
-        ev.preventDefault();
+        event.preventDefault();
         $.getJSON("/search", "query=" + $("#searchQuery").val(), function( data ) {
             alert('done');
             $("#result").text(JSON.stringify(data));
