@@ -4,22 +4,25 @@
             <title>{{title}}</title>
         </script>
         
-        <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+        <link href="../public/stylesheets/bootstrap.min.css" rel="stylesheet">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="/javascripts/bootstrap.min.js"></script> 
+        <script src="../public/javascripts/bootstrap.min.js"></script> 
         
-        <script src="/javascripts/handlebars-v2.0.0.js"></script>
-        <script src="/javascripts/handlebarRenderer.js"></script>
+        <script src="../public/javascripts/handlebars-v2.0.0.js"></script>
+        <script src="../public/javascripts/handlebarRenderer.js"></script>
+        
+        <script src="../public/javascripts/labo3.js"></script>
     </head>
     <body>
         <script id="body-template" type="text/x-handlebars-template">
             <div class="container">
                 <form class="navbar-form" role="form">
-                    <input type="text" class="form-control">
-                    <button type="submit" class="btn btn-success">{{buttonLabel}}</button>
+                    <input id="searchQuery" type="text" class="form-control">
+                    <button id="searchButton" type="submit" class="btn btn-success">{{buttonLabel}}</button>
                 </form>
+                <div id="div1"></div>
             </div>
         </script>
     </body>

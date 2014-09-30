@@ -1,7 +1,7 @@
 /*
  -------------------------------------------------------------------------------
  Laboratoire : 3
- Fichier     : handlebarRenderer.java
+ Fichier     : handlebarRenderer.js
  Auteur(s)   : Jollien Dominique et Ngo Dung
  Date        : 30.09.2014
 
