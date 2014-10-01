@@ -58,8 +58,8 @@ function gitHubRepositoryResearch(researchQuery, resultGetterFunction){
                                    url: repo.url,
                                    created_at: repo.created_at,
                                    updated_at: repo.updated_at,
-                                   pushed_at: repo.pushed_at//,
-                                   //stars: repo.stars
+                                   pushed_at: repo.pushed_at,
+                                   stars: repo.stargazers_count
                                   });
             });
 
