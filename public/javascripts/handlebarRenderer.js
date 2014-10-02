@@ -12,12 +12,17 @@
 $(document).ready(function(){ 
     var context = { 
         title: "TWEB Labo3", 
-        buttonLabel: "chercher"
+        buttonLabel: "chercher",
+        tableHeaderId: "id",
+        tableHeaderName: "nom",
+        tableHeaderDescription: "déscription",
+        tableHeaderOwner: "propriétaire",
+        tableHeaderStars: "étoiles"
     };
     
     var source = $("#body-template").html(); 
     var template = Handlebars.compile(source); 
-    $('body').html(template(context));
+    $('div#container').html(template(context));
     
     source = $("#head-template").html(); 
     template = Handlebars.compile(source); 
