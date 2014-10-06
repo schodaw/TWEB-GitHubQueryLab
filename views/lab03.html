@@ -1,8 +1,6 @@
 <html>
     <head>
-        <script id="head-template" type="text/x-handlebars-template">
             <title>{{title}}</title>
-        </script>
         
         <!--<link href="../public/stylesheets/bootstrap.min.css" rel="stylesheet">-->
         <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
@@ -15,20 +13,17 @@
         <!--<script src="../public/javascripts/handlebars-v2.0.0.js"></script>
         <script src="../public/javascripts/handlebarRenderer.js"></script>-->
         <script src="/javascripts/handlebars-v2.0.0.js"></script>
-        <script src="/javascripts/handlebarRenderer.js"></script>
         
         <!--<script src="../public/javascripts/labo3.js"></script>-->
         <script src="/javascripts/labo3.js"></script>
     </head>
     <body>
         <div class="container">
-            <script id="body-template" type="text/x-handlebars-template">
                 <form class="navbar-form" role="form">
                     <input id="searchQuery" type="text" class="form-control">
                     <button id="searchButton" type="submit" class="btn btn-success">{{buttonLabel}}</button>
                 </form>
 
-                <script id="repos-template" type="text/x-handlebars-template">
                     <table id="result">
                         <tr>
                             <th>{{tableHeaderId}}</th>
@@ -38,8 +33,6 @@
                             <th>{{tableHeaderStars}}</th>
                         </tr>
                     </table>
-                </script>
-            </script>
         </div>
     </body>
 </html>
