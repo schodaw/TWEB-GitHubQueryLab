@@ -9,6 +9,23 @@
  -------------------------------------------------------------------------------
  */
 $(function(){
+    
+    var context = { 
+        tableHeaderId: "id",
+        tableHeaderName: "nom",
+        tableHeaderDescription: "description",
+        tableHeaderOwner: "propriétaire",
+        tableHeaderStars: "étoiles"
+    };
+
+    //getting the handlebar templates for github research queries
+    var resultHeaderSource = $("#result-header-template").html()
+    var resultHeaderTemplate = Handlebars.compile(resultHeaderSource); 
+    $('tr#result-header').html(resultHeaderTemplate(context));
+    
+    var resultSource = $("#result-template").html();
+    var resultTemplate = Handlebars.compile(resultSource);
+    
     $("#searchButton").click(function(){
         //prevent default handling of the event
         //we do that so that the page is not refreshed which would erase the content of the result <p> we just put with AJAX
@@ -17,7 +34,13 @@ $(function(){
         //perform a resarch of Git repositories by doing an AJAX query on /search
         //this method doesn't work on cross-domain url
         $.getJSON("/search", "query=" + $("#searchQuery").val(), function( data ) {
-            $("#result").text(JSON.stringify(data));
+            
+            //use handlebars to put the query result in the UI
+            //$('table#result').html("");
+            
+            data.repositories.forEach(function(repo) {
+                $('table#result').html($('table#result').html() + resultTemplate(repo));
+            });
         });
     });
 });

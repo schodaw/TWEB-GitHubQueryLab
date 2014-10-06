@@ -1,6 +1,6 @@
 <html>
     <head>
-            <title>{{title}}</title>
+        <title>TWEB Labo3 gitHubRequest</title>
         
         <!--<link href="../public/stylesheets/bootstrap.min.css" rel="stylesheet">-->
         <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
@@ -10,8 +10,7 @@
         <!--<script src="../public/javascripts/bootstrap.min.js"></script> -->
         <script src="/javascripts/bootstrap.min.js"></script> 
         
-        <!--<script src="../public/javascripts/handlebars-v2.0.0.js"></script>
-        <script src="../public/javascripts/handlebarRenderer.js"></script>-->
+        <!--<script src="../public/javascripts/handlebars-v2.0.0.js"></script>-->
         <script src="/javascripts/handlebars-v2.0.0.js"></script>
         
         <!--<script src="../public/javascripts/labo3.js"></script>-->
@@ -19,20 +18,30 @@
     </head>
     <body>
         <div class="container">
-                <form class="navbar-form" role="form">
-                    <input id="searchQuery" type="text" class="form-control">
-                    <button id="searchButton" type="submit" class="btn btn-success">{{buttonLabel}}</button>
-                </form>
-
-                    <table id="result">
-                        <tr>
-                            <th>{{tableHeaderId}}</th>
-                            <th>{{tableHeaderName}}</th>
-                            <th>{{tableHeaderDescription}}</th>
-                            <th>{{tableHeaderOwner}}</th>
-                            <th>{{tableHeaderStars}}</th>
-                        </tr>
-                    </table>
+            <form class="navbar-form" role="form">
+                <input id="searchQuery" type="text" class="form-control">
+                <button id="searchButton" type="submit" class="btn btn-success">rechercher repos GitHub</button>
+            </form>
+            <table id="result" class="table table-stripped table-bordered">
+                <tr id="result-header">
+                    <script id="result-header-template" type="text/x-handlebars-template">
+                        <th>{{tableHeaderId}}</th>
+                        <th>{{tableHeaderName}}</th>
+                        <th>{{tableHeaderDescription}}</th>
+                        <th>{{tableHeaderOwner}}</th>
+                        <th>{{tableHeaderStars}}</th>
+                    </script>
+                </tr>
+                <script id="result-template" type="text/x-handlebars-template">
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{full_name}}</td>
+                        <td>{{description}}</td>
+                        <td>{{owner.login}}</td>
+                        <td>{{stars}}</td>
+                    </tr>
+                </script>
+            </table>
         </div>
     </body>
 </html>

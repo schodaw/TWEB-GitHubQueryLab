@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //test the github query functionality
-router.get('/search', function(req, res) {
+router.get('/', function(req, res) {
     gitHubRepositoryResearch(req.param("query"), function(result) {
 	   res.send(result);
     });
